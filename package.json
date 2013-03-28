@@ -1,6 +1,6 @@
 {
   "name": "boxcar-bitcoin",
-  "version": "0.0.0-1",
+  "version": "0.0.0-6",
   "description": "Notifies people via Boxcar.io when Bitcoins crash or surge (via mtgox)",
   "scripts": {
     "start": "node ./index.js"

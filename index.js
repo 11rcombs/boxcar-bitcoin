@@ -69,4 +69,29 @@ function sendNotification(rate){
 
 var app = express();
 
+app.use(express.bodyParser());
+
+app.use(express.static("public"));
+app.use(express.directory("public"))
+
+app.post("/", function(req, res, next){
+	if(req.body.email){
+		provider.subscribe({
+			email: req.body.email
+		}, function(err, info){
+			if(err){
+				return next(err);
+			}
+			res.send(info);
+		});
+	}else{
+		return next("No Email Provided!");
+	}
+});
+
+app.use(function(err, req, res, next){
+	console.error(err);
+	next();
+});
+
 app.listen(process.env.NODE_PORT);
