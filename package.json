@@ -1,0 +1,28 @@
+{
+  "name": "boxcar-bitcoin",
+  "version": "0.0.0-1",
+  "description": "Notifies people via Boxcar.io when Bitcoins crash or surge (via mtgox)",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "node-boxcar": "0.1.2",
+    "mtgox-socket-client": "0.0.2",
+    "express": "3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/11rcombs/boxcar-bitcoin.git"
+  },
+  "keywords": [
+    "boxcar",
+    "bitcoin",
+    "mtgox"
+  ],
+  "author": "Rodger Combs",
+  "license": "BSD",
+  "subdomain": "bitcoin",
+  "engines": {
+    "node": "0.8.x"
+  }
+}
