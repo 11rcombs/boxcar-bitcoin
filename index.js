@@ -41,10 +41,10 @@ client.on("ticker", function(message){
 		var dPrice = high - low;
 		var dTime = highTime - lowTime;
 		var rate = (dPrice / message.ticker.last) / dTime; // rate is in change/millisecond here!
-		var ratePPH = rate / 1000 / 60 / 60; // rate in change/hour
-		if(Math.abs(rateDPH) > .05){
+		var ratePH = rate / 1000 / 60 / 60; // rate in change/hour
+		if(Math.abs(ratePH) > .05){
 			if(now - lastNotification < 1000 * 60 * 30){ // Don't send more than 2 notifications/hour
-				sendNotification(rateDPH);
+				sendNotification(ratePH);
 				lastNotification = now;
 			}
 		}
